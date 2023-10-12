@@ -21,6 +21,7 @@ class LocationDetailEncoder(ModelEncoder):
         "created",
         "updated",
         "picture_url",
+        "id",
     ]
 
     def get_extra_data(self, o):
