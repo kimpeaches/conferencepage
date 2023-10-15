@@ -84,8 +84,8 @@ function AttendConferenceForm() {
         <div className="col">
           <div className="card shadow">
             <div className="card-body">
-              <form className={formClasses} onSubmit={handleSubmit} id="create-attendee-form">
-                <h1 className="card-title">It's Conference Time!</h1>
+              <form className={formClasses} onSubmit={handleSubmit} id="create-attendee-form" style={{ color: '#407aac' }}>
+                <h1 className="card-title"> It's Conference Time!</h1>
                 <p className="mb-3">
                   Please choose which conference
                   you'd like to attend.

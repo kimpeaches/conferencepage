@@ -9,12 +9,12 @@ function ConferenceColumn(props) {
         return (
           <div key={conference.href} className="card mb-3 shadow">
             <img src={conference.location.picture_url} className="card-img-top" />
-            <div className="card-body">
+            <div className="card-body bg-dark">
               <h5 className="card-title">{conference.name}</h5>
               <h6 className="card-subtitle mb-2 text-muted">
                 {conference.location.name}
               </h6>
-              <p className="card-text">
+              <p className="card-text text-muted">
                 {conference.description}
               </p>
             </div>
@@ -90,11 +90,16 @@ const MainPage = (props) =>  {
 
   return (
     <>
-      <div className="px-4 py-5 my-5 mt-0 text-center bg-info">
+    <div style={{
+      backgroundImage: `url("https://images.unsplash.com/photo-1635151227785-429f420c6b9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80")`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover"
+    }}>
+      <div className="px-4 py-5 my-5 mt-0 text-center bg-transparent">
         <img className="bg-white rounded shadow d-block mx-auto mb-4" src="/logo.svg" alt="" width="600" />
-        <h1 className="display-5 fw-bold">Conference GO!</h1>
+        <h1 className="display-5 fw-bold" style={{ color: '#407aac' }}>Conference GO!</h1>
         <div className="col-lg-6 mx-auto">
-          <p className="lead mb-4">
+          <p className="lead mb-4" style={{ color: '#407aac' }}>
             The only resource you'll ever need to plan an run your in-person or
             virtual conference for thousands of attendees and presenters.
           </p>
@@ -104,7 +109,7 @@ const MainPage = (props) =>  {
         </div>
       </div>
       <div className="container">
-        <h2>Upcoming conferences</h2>
+        <h2 style={{ color: '#407aac' }}>Upcoming conferences</h2>
         <div className="row">
           {conferenceColumns.map((conferenceList, index) => {
             return (
@@ -112,6 +117,7 @@ const MainPage = (props) =>  {
             );
           })}
         </div>
+      </div>
       </div>
     </>
   );

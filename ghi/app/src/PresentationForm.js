@@ -91,9 +91,10 @@ function PresentationForm(props) {
 
 
     return (
+
         <div className="row">
         <div className="offset-3 col-6">
-          <div className="shadow p-4 mt-4">
+          <div className="shadow p-4 mt-4" style={{ color: '#407aac' }}>
             <h1>Create a new presentation</h1>
             <form onSubmit={handleSubmit} id="create-presentation-form">
               <div className="form-floating mb-3">
