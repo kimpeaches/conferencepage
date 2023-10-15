@@ -9,12 +9,12 @@ function ConferenceColumn(props) {
         return (
           <div key={conference.href} className="card mb-3 shadow">
             <img src={conference.location.picture_url} className="card-img-top" />
-            <div className="card-body bg-dark">
+            <div className="card-body bg-dark"  style={{ color: '#407aac'}}>
               <h5 className="card-title">{conference.name}</h5>
               <h6 className="card-subtitle mb-2 text-muted">
                 {conference.location.name}
               </h6>
-              <p className="card-text text-muted">
+              <p className="card-text">
                 {conference.description}
               </p>
             </div>
