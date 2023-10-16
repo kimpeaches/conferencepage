@@ -8,7 +8,7 @@ function ConferenceColumn(props) {
         const conference = data.conference;
         return (
           <div key={conference.href} className="card mb-3 shadow">
-            <img src={conference.location.picture_url} className="card-img-top" />
+            <img src={conference.location.picture_url} className="card-img-top" alt="city"/>
             <div className="card-body bg-dark"  style={{ color: '#407aac'}}>
               <h5 className="card-title">{conference.name}</h5>
               <h6 className="card-subtitle mb-2 text-muted">
@@ -93,7 +93,10 @@ const MainPage = (props) =>  {
     <div style={{
       backgroundImage: `url("https://images.unsplash.com/photo-1635151227785-429f420c6b9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80")`,
       backgroundRepeat: "no-repeat",
-      backgroundSize: "cover"
+      backgroundSize: "cover",
+      minHeight: "100vh",
+      backgroundPosition: "center",
+      backgroundAttachment: "fixed"
     }}>
       <div className="px-4 py-5 my-5 mt-0 text-center bg-transparent">
         <img className="bg-white rounded shadow d-block mx-auto mb-4" src="/logo.svg" alt="" width="600" />

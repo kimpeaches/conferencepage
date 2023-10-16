@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import { useState, useEffect } from "react";
 import Nav from './Nav';
 import AttendeesList from './AttendeesList';
 import LocationForm from './LocationForm';
@@ -9,15 +10,25 @@ import PresentationForm from "./PresentationForm";
 import MainPage from "./MainPage";
 
 function App(props) {
-  if (props.attendees === undefined) {
-    return null;
+
+  const [ attendees, setAttendees ] = useState([])
+  async function loadAttendees() {
+    const response = await fetch('http://localhost:8001/api/attendees/');
+    const { attendees } = await response.json();
+    setAttendees(attendees)
   }
+  useEffect (() => {
+    loadAttendees();
+  }, []);
   return (
     <>
       <div style={{
       backgroundImage: `url("https://images.unsplash.com/photo-1635151227785-429f420c6b9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80")`,
       backgroundRepeat: "no-repeat",
-      backgroundSize: "cover"
+      backgroundSize: "cover",
+      minHeight: "100vh",
+      backgroundAttachment: "fixed",
+      backgroundPosition: "center"
     }}>
     <BrowserRouter>
       <Nav />

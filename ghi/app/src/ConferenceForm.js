@@ -108,7 +108,7 @@ function ConferenceForm(props) {
     return (
         <div className="row">
         <div className="offset-3 col-6">
-          <div className="shadow p-4 mt-4"style={{ color: '#407aac' }}>
+          <div className="p-4 mt-4"style={{ color: '#407aac' }}>
             <h1>Create a new conference</h1>
             <form onSubmit={handleSubmit} id="create-conference-form">
               <div className="form-floating mb-3">
